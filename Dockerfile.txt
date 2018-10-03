@@ -1,0 +1,34 @@
+FROM rocker/shiny:3.3.2
+MAINTAINER Joseph Santos (Joseph_Santos@hsb.com)
+RUN apt-get update && apt-get install -y \
+sudo \
+    gdebi-core \
+    pandoc \
+    pandoc-citeproc \
+    libcurl4-gnutls-dev \
+    libcairo2-dev \
+    libxt-dev \
+    libssl-dev \
+    libssh2-1-dev \
+    libss1.0.0
+
+# system library dependency
+RUN apt-get update && apt-get install -y \
+    libmpfr-dev
+
+# basic shiny functionality
+RUN R -e "install.packages(c('shiny', 'rmarkdown'), repos='https://cloud.r-project.org/')"
+
+# install dependencies of the app
+RUN R -e "install.packages('Rmpfr', repos='https://cloud.r-project.org/')"
+
+# copy the app to the image
+RUN mkdir /root/shiny-image
+COPY shiny-image /root/shiny-image
+
+COPY Rprofile.site /usr/lib/R/etc/
+
+EXPOSE 80
+
+CMD ["R", "-e", "shiny::runApp('/root/shiny-image')"]
+
