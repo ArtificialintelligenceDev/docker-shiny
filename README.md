@@ -1,5 +1,4 @@
-## just a rough sketch of this readme
-## take pictures and link them inline
+## The Definitive Guide to Running Shiny Apps in Microsoft Azure
 ## Add a link to this project in sandbox once complete
 
 # Purpose
@@ -37,7 +36,13 @@ Before we get into how to write a Dockerfile, you'll need to have Docker install
 
 # Dockerfile
 Go deep on this, on what each command does and why.
-A Dockerfile is a text document that contains all the instructions needed to create an image. The Dockerfile starts with a base image that decides which image your app should be built upon. 
+
+
+A Dockerfile is a text document that contains all the instructions needed to create an image. An image is an inert, immutable, file that's essentially a snapshot of a container. Images are created with the build command, and they'll produce a container when started with run. Images get stored in a registry.
+
+Docker can build images automatically by reading the instructions from a Dockerfile. Each instruction will create a new image layer to the image. Instructions specify what to do when building the image.
+
+The Dockerfile starts with a base image that decides which image your app should be built upon. 
 
 you can pack your application with all of the binaries and runtime libraries, back-end tools, and even specific services your application needs for running — and make it readily available for instant delivery and automatic deployment.
 
