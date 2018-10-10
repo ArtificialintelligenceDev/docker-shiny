@@ -8,10 +8,11 @@ This is a guide on how to build and deploy a dockerized shiny app on Azure Conta
 # Steps Overview
 
 # Project directory organization
-Docker works using Dockerfile, a file which specifies how Docker is supposed to build your application. 
+To dockerize an app we use a Dockerfile, a file which specifies how Docker is supposed to build your application. 
 It contains the steps Docker is supposed to follow to package your app. Once that is done, you can send
- this packaged app to anyone and they can run it on their system withno problems.
+ this packaged app to anyone and they can run it on their system without any problems or need to download dependencies or libraries. Everything is self-contained.
 
+# Project Structure
 Let's start with the project structure. You will have to keep Dockerfile at the root of your project. A basic project will look as follows -
 
 - app.py
@@ -21,12 +22,14 @@ Let's start with the project structure. You will have to keep Dockerfile at the 
 -   some_file
 -   some_file
 
-Dockerfile starts with a base image that decides on which image your app should be built upon. Basically "Images" are nothing but apps.
-So for example you want your run your application in Rocker Shiny server 3.3.2 , you use rocker/shiny:3.3.2 as the base image.
+
 
 # Build Shiny App
-We begin by making our shiny app. You can do this in R by going to File> New File > Shiny Web App.
+We begin by making our shiny app. You can do this in R by going to File> New File > Shiny Web App. 
+
 ![ScreenShot1](shiny-app-screenshot.PNG)
+
+Once you have your app, you're going to want to dockerize it so everyone in your department can make use of your useful app without needing to go to a dreaded transfer drive or ask them to send you files.
 
 # Installing Docker
 Before we get into how to write a Dockerfile, you'll need to have Docker installed. You can find this in the Docker.com page. For help with installing Docker, refer to this link: https://docs.docker.com/docker-for-windows/ . To test and see if you successfully installed Docker, in Command Prompt or PowerShell, type docker --version
@@ -34,8 +37,9 @@ Before we get into how to write a Dockerfile, you'll need to have Docker install
 
 # Dockerfile
 Go deep on this, on what each command does and why.
+A Dockerfile is a text document that contains all the instructions needed to create an image. The Dockerfile starts with a base image that decides which image your app should be built upon. 
 
-you can pack your application with all of the binaries and runtime libraries, back-end tools, OS tweaks, and even specific services your application needs for running — and make it readily available for instant delivery and automatic deployment.
+you can pack your application with all of the binaries and runtime libraries, back-end tools, and even specific services your application needs for running — and make it readily available for instant delivery and automatic deployment.
 
 
 ## Base Images
