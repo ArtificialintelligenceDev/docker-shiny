@@ -28,8 +28,14 @@ So for example you want your run your application in Rocker Shiny server 3.3.2 ,
 We begin by making our shiny app. You can do this in R by going to File> New File > Shiny Web App.
 ![ScreenShot1](shiny-app-screenshot.PNG)
 
+# Installing Docker
+Before we get into how to write a Dockerfile, you'll need to have Docker installed. You can find this in the Docker.com page. For help with installing Docker, refer to this link: https://docs.docker.com/docker-for-windows/ . To test and see if you successfully installed Docker, in Command Prompt or PowerShell, type docker --version
+![ScreenShot2](docker-version-screenshot.PNG)
+
 # Dockerfile
 Go deep on this, on what each command does and why.
+
+you can pack your application with all of the binaries and runtime libraries, back-end tools, OS tweaks, and even specific services your application needs for running — and make it readily available for instant delivery and automatic deployment.
 
 
 ## Base Images
