@@ -7,7 +7,7 @@ gdebi-core \
 pandoc \
 pandoc-citeproc \
 libcurl4-gnutls-dev \
-libcairo2-dev-unstable \
+libcairo2-dev \
 libxt-dev \
 libssl-dev
 
