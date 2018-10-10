@@ -26,7 +26,7 @@ So for example you want your run your application in Rocker Shiny server 3.3.2 ,
 
 # Build Shiny App
 We begin by making our shiny app. You can do this in R by going to File> New File > Shiny Web App.
-![ScreenShot1](shiny-app-screenshot.jpg)
+![ScreenShot1](shiny-app-screenshot.PNG)
 
 # Dockerfile
 Go deep on this, on what each command does and why.
